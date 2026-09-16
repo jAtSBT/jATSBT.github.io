@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://t2c-stage.solutionsbytext.com/favicon.ico">
+<title>Horizon National Bank</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0;
+    color: #1a1a1a;
+    background: #f5f6f8;
+    background-image: url(./sara-kurfess-xCm3FGX8lb8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  header {
+    background: #0b2545;
+    color: #fff;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  header .logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: #ffb703;
+  }
+  header .brand {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  main {
+    max-width: 640px;
+    margin: 64px auto;
+    padding: 0 24px;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 8px; }
+  p { color: #555; line-height: 1.55; }
+  .card {
+    background: #fff;
+    border: 1px solid #e2e5ea;
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 28px;
+  }
+  .card h2 {
+    font-size: 1.05rem;
+    margin: 0 0 8px;
+  }
+  .card p { margin-top: 0; }
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    margin: 14px 0 4px;
+  }
+  input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border: 1px solid #ccd2da;
+    border-radius: 6px;
+  }
+  .btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  button {
+    margin-top: 16px;
+    background: #0b2545;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+
+  }
+  button#cta:hover { background: #123a68; }
+  #credit {
+    background: white;
+    text-align: center;
+    width: 254px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: x-small;
+    border-radius: 10px;
+  }
+  .tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #e2e5ea;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #8a93a3;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab-btn.active {
+    color: #0b2545;
+    border-bottom-color: #0b2545;
+  }
+  .dollar-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccd2da;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .dollar-input span {
+    padding: 10px 4px 10px 12px;
+    color: #555;
+    font-weight: 600;
+    background: #f5f6f8;
+  }
+  .dollar-input input {
+    border: none;
+    flex: 1;
+    padding: 10px 12px 10px 6px;
+    font-size: 0.95rem;
+  }
+  .dollar-input input:focus {
+    outline: none;
+  }
+  .btn-wrapper.end {
+    justify-content: flex-end;
+  }
+  .confirmation {
+    margin-top: 16px;
+    background: #eef8f0;
+    border: 1px solid #bfe3c8;
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #1f7a4d;
+    font-size: 0.9rem;
+  }
+</style>
+    <script src="https://hsi-stage.solutionsbytext.com/js/hsi-attribution.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <div class="brand">Horizon National Bank</div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="tabs">
+        <button type="button" class="tab-btn active" data-tab="refi">Refinance my loan</button>
+        <button type="button" class="tab-btn" data-tab="payment">Make a payment</button>
+      </div>
+
+      <div class="tab-panel" id="tab-refi">
+        <h2>Thinking about refinancing your auto loan?</h2>
+        <p>
+          Lower your rate or shrink your monthly payment. Tell us how to reach
+          you and click "Get more info" to find out more.
+        </p>
+        <form id="prechat-form">
+          <label for="prechat-name">Name</label>
+          <input type="text" id="prechat-name" name="name" required autocomplete="name">
+
+          <label for="prechat-phone">Phone number</label>
+          <input type="tel" id="prechat-phone" name="phone" required autocomplete="tel">
+
+          <div class="btn-wrapper">
+            <label for="consent">
+              <input type="checkbox" id="consent" name="consent">
+              I want to receive text messages
+            </label>
+            <button id="cta" type="submit">Get more info</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="tab-panel" id="tab-payment" hidden>
+        <h2>Make a payment on your existing auto loan</h2>
+        <p>
+          Already a Horizon National Bank auto loan customer? Let us know
+          how much you could put toward your balance today.
+        </p>
+        <form id="payment-form">
+          <label for="payment-name">Name</label>
+          <input type="text" id="payment-name" name="name" required autocomplete="name">
+
+          <label for="payment-account">Loan account number</label>
+          <input type="text" id="payment-account" name="account" required autocomplete="off">
+
+          <label for="payment-amount">How much would you like to pay today?</label>
+          <div class="dollar-input">
+            <span>$</span>
+            <input type="number" id="payment-amount" name="amount" min="1" step="0.01" required placeholder="250.00">
+          </div>
+
+          <div class="btn-wrapper end">
+            <button id="payment-cta" type="submit">Make Payment</button>
+          </div>
+        </form>
+        <div id="payment-confirmation" class="confirmation" hidden></div>
+      </div>
+    </div>
+  </main>
+  <div id="credit">
+    Photo by <a href="https://unsplash.com/@stereophototyp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sara Kurfeß</a> on <a href="https://unsplash.com/photos/white-and-red-bmw-m-3-on-road-during-daytime-xCm3FGX8lb8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </div>
+
+  <!-- Genesys Cloud Web Messaging bootstrap -->
+  <script type="text/javascript" charset="utf-8">
+    (function (g, e, n, es, ys) {
+      g['_genesysJs'] = e;
+      g[e] = g[e] || function () {
+        (g[e].q = g[e].q || []).push(arguments)
+      };
+      g[e].t = 1 * new Date();
+      g[e].c = es;
+      ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+    })(window, 'Genesys', 'https://apps.usw2.pure.cloud/genesys-bootstrap/genesys.min.js', {
+      environment: 'prod-usw2',
+      deploymentId: '5fe0d84b-8b6d-43bc-b465-731f1c5079f5'
+    });
+
+    document.getElementById('prechat-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var name = document.getElementById('prechat-name').value.trim();
+      var phone = document.getElementById('prechat-phone').value.trim();
+
+      Genesys('command', 'Database.set', {
+        messaging: {
+          customAttributes: { name: name, phone: phone }
+        }
+      }, function () {
+        Genesys('command', 'Messenger.open');
+      }, function () {
+        Genesys('command', 'Messenger.open');
+      });
+    });
+  </script>
+  <!-- FIRST CONVERSION STEP: LANDED -->
+  <script>
+    window.hsiAttribution.trackConversion({
+      outcome_type: "landed",
+      value: "demo",
+      metadata: { demo: "Staging Conversion Demo" }
+    });
+  </script>
+  <script>
+    document.getElementById('cta').addEventListener('click', function () {
+      console.log("CTA CLICK");
+      window.hsiAttribution.trackConversion({ outcome_type: 'cta_click' });
+    });
+  </script>
+  <!-- TAB SWITCHING: refinance demo vs. make-a-payment demo -->
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        document.querySelectorAll('.tab-panel').forEach(function (p) { p.hidden = true; });
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).hidden = false;
+      });
+    });
+  </script>
+  <!-- PAYMENT CONVERSION DEMO: tracks the dollar amount, no Genesys Messenger -->
+  <script>
+    document.getElementById('payment-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var name = document.getElementById('payment-name').value.trim();
+      var amount = parseFloat(document.getElementById('payment-amount').value);
+
+      window.hsiAttribution.trackConversion({
+        outcome_type: 'payment',
+        value: amount.toFixed(2),
+        metadata: { demo: 'Payment Conversion Demo' }
+      });
+
+      document.getElementById('payment-form').hidden = true;
+      var confirmation = document.getElementById('payment-confirmation');
+      confirmation.hidden = false;
+      confirmation.textContent = 'Thanks, ' + name + '! We\'ve recorded a payment of $' + amount.toFixed(2) + ' toward your loan.';
+    });
+  </script>
+</body>
+</html>
